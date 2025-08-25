@@ -55,6 +55,7 @@ button{
   
 }
 button:hover{
+    transition: 0.5s;
     color: white;
     background-color: #2196f3;
 }
@@ -70,6 +71,9 @@ button:hover{
    font-family: 'JetBrains Mono';
 }
 .d3{
+    position: relative;
+    
+    left: 35%;
     background-color: coral;
 color: aliceblue;
 text-align: center;
@@ -108,6 +112,7 @@ footer{
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    }
    button{
+
     font-weight: bold;
     font-size: large;
    background:transparent;
@@ -118,7 +123,10 @@ footer{
     border-radius: 5px;
     margin-block: 3px;
     
-}
+} 
+ button:hover{
+    background: transparent;
+ }
    div{
     display: inline-flex;
     flex-direction: column;
@@ -133,6 +141,14 @@ footer{
     margin-left: 80px;
     padding: 0px;
 }
+.d2{
+    position: relative;
+    /*left: 110px;*/
+}
+.d3{
+    position: relative;
+    left: 0;
+}
 }
 @media only screen and (max-width:325px){
     h1{
@@ -144,15 +160,15 @@ footer{
   </style>
   <body>
   <div>
-   <a href="#s1"> <button>about us</button></a>
-    <a href="#s2"><button>branches</button></a>
-    <a href="#s3"> <button>links</button></a>
+   <a href="#s1"> <button id="b1" onclick="btn()"  onmouseleave="b()">about us</button></a>
+    <a href="#s2"><button id="bT" onclick="btnTwo()" onmouseleave="b()">branches</button></a>
+    <a href="#s3"> <button id="bTH" onclick="btnThree()" onmouseleave="b()">links</button></a>
   </div>
   <h1>Little star school</h1><p id="para"></p>
   <section id="s1"><label><h2 id="subHeading1">About us</h2></label><div class="d1"><p id="about">Little star school is a budget freindly school. We have classes from playgroup to 10th!. School is almost one decade old having a nice experience to study your children.</p>
-  <p id="about">little star school is determined to provide best quality education at resonable 
-    fee enabling every one to have equal opportuntuties to learn and contribute for the prosperity and
-    prosperity and progress of our country as we offer many childerens to them from ground to the sky</p></section>
+  <p id="about">little star school is determined to provide best quality education at reasonable 
+    fee enabling every one to have equal opportunities to learn and contribute for the prosperity and
+    prosperity and progress of our country </p></section>
   </div>
  <h2 id="subHeading2">branches</h2>  
 <section id="s2"><div class="d2"><p>
@@ -167,14 +183,46 @@ footer{
 <a id="a2" href="https://www.youtube.com/@ExplorePakistan667">youtube</a>
 <p>The contact number will be written on the branches section</p>
 </section></div>
-<center>Made for Educational purposes</center>
+<center>By a student of Little star school</center>
 </body>
 <script>
 console.log("v2. added color")
 console.log("v1. first version it added about,link and contact section")
-window.onload = function(){
+console.log("small updates to the ui")
+window.onload = function(){}
  window.scrollTo(0,0);
+let a = window.matchMedia("(max-width: 273px)")
+function handleMediaQueryChange(event){
+ if(a){
+    alert("Your Device is too short for the website to become more responsive. The Website could be not good looking")
+ }
+ else{
+ }
 }
 
+function btn(){
+    let b2 = document.getElementById("b1")
+    setTimeout(() => {
+        console.log("h")
+        b2.style.color="#2196f3"
+        b2.style.backgroundColor="white"  
+     }, 1000);
+}
+function btnTwo(){
+    let b2 = document.getElementById("bT")
+    setTimeout(() => {
+        console.log("h")
+        b2.style.color="#2196f3"
+        b2.style.backgroundColor="white"  
+     }, 1000);
+}
+function btnThree(){
+    let b2 = document.getElementById("bTH")
+    setTimeout(() => {
+        console.log("h")
+        b2.style.color="#2196f3"
+        b2.style.backgroundColor="white"  
+     }, 500);
+}
 </script>
 </html>
